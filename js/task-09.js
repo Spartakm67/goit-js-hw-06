@@ -6,14 +6,11 @@ function getRandomHexColor() {
 
 const btnChangeColor = document.querySelector(".change-color");
 btnChangeColor.addEventListener("click", bodyChangeColor);
-const colorValue = document.querySelector(".color");
-const body = document.querySelector("body");
-const style = document.querySelector("style");
-
-let bodyColor = "";
+const spanColorValue = document.querySelector(".color");
+const bodyColorValue = document.body;
 
 function bodyChangeColor() {
-  colorValue.textContent = getRandomHexColor();
-  bodyColor = `body{background-color: ${getRandomHexColor()};}`;
-  style.insertAdjacentHTML("beforeend", bodyColor);
+  const randomColor = getRandomHexColor();
+  bodyColorValue.style.backgroundColor = randomColor;
+  spanColorValue.textContent = randomColor;
 }
